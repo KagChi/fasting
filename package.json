@@ -14,6 +14,13 @@
     "lint:fix": "eslint src --fix --ext ts",
     "build": "swc src -d dist && tsc --emitDeclarationOnly"
   },
+  "files": [
+    "dist/**",
+    "LICENSE",
+    "README.md",
+    "package.json",
+    "pnpm-lock.yaml"
+  ],
   "type": "module",
   "author": "KagChi",
   "license": "GPL-3.0",

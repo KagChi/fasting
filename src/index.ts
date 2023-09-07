@@ -22,18 +22,20 @@ export * from "./Errors/ApiError.js";
 
 export interface FastingOptions extends FastifyPluginOptions {
     basePath: string;
+    paths?: string[];
 }
 
 const fasting = async (fastify: FastifyInstance, options: FastingOptions): Promise<void> => {
     const stores = new StoreRegistry();
     stores.registerPath(options.basePath);
 
+    for (const path of options.paths ?? []) stores.registerPath(path);
+
     fastify.decorate("fasting-stores", stores);
 
     await fastify.register(middie);
     stores.register(new RouteStore());
     stores.register(new PreHandlerStore());
-
     await Promise.all([...stores.values()].map((store: Store<Piece>) => store.loadAll()));
 };
 
@@ -52,5 +54,11 @@ declare module "@sapphire/pieces" {
 
     interface Container {
         server: FastifyInstance;
+    }
+}
+
+declare module "fastify" {
+    interface FastifyInstance {
+        "fasting-stores": StoreRegistry;
     }
 }

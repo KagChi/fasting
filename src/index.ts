@@ -1,7 +1,7 @@
 import { FastifyInstance, FastifyPluginOptions } from "fastify";
 import { PreHandlerStore } from "./Stores/PreHandlerStore.js";
 import { RouteStore } from "./Stores/RouteStore.js";
-import { StoreRegistry, Store, Piece } from "@sapphire/pieces";
+import { StoreRegistry, Store, Piece, container } from "@sapphire/pieces";
 import middie from "@fastify/middie";
 import fp from "fastify-plugin";
 
@@ -27,6 +27,11 @@ export interface FastingOptions extends FastifyPluginOptions {
 
 const fasting = async (fastify: FastifyInstance, options: FastingOptions): Promise<void> => {
     const stores = new StoreRegistry();
+    stores.register(new RouteStore());
+    stores.register(new PreHandlerStore());
+
+    container.server = fastify;
+
     stores.registerPath(options.basePath);
 
     for (const path of options.paths ?? []) stores.registerPath(path);
@@ -34,8 +39,6 @@ const fasting = async (fastify: FastifyInstance, options: FastingOptions): Promi
     fastify.decorate("fasting-stores", stores);
 
     await fastify.register(middie);
-    stores.register(new RouteStore());
-    stores.register(new PreHandlerStore());
     await Promise.all([...stores.values()].map((store: Store<Piece>) => store.loadAll()));
 };
 

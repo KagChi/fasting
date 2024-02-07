@@ -63,8 +63,8 @@ export class Root extends Route {
         })
     }
 
-    public run(req: FastifyRequest, res: FastifyReply) {
-        res.send("Hello, world!")
+    public run(request: FastifyRequest, response: FastifyReply) {
+        return response.send("Hello, world!")
     }
 }
 ```

@@ -1,4 +1,4 @@
-import { Piece, PieceContext } from "@sapphire/pieces";
+import { Piece, LoaderPieceContext } from "@sapphire/pieces";
 import { HTTPMethods, FastifySchema, FastifyReply, FastifyRequest, RouteShorthandOptions } from "fastify";
 import { Awaitable } from "@sapphire/utilities";
 import { Result } from "@sapphire/result";
@@ -7,7 +7,7 @@ import { PrehandlerContainerArray, PrehandlerEntryResolvable } from "../Lib/Preh
 
 export abstract class Route extends Piece<RouteOptions> {
     public prehandlers: PrehandlerContainerArray;
-    public constructor(context: PieceContext, options: RouteOptions) {
+    public constructor(context: LoaderPieceContext, options: RouteOptions) {
         super(context, options);
         if (!this.options.name) this.options.name = `${this.options.method} ${this.options.path}`;
         this.prehandlers = new PrehandlerContainerArray(options.preHandlers ?? []);

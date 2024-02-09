@@ -34,37 +34,38 @@ yarn add @kagchi/fasting
 ## Main file
 src/index.ts
 ```ts
-import Fastify from "fastify";
-import { fasting } from "@kagchi/fasting"
+import { fasting } from "@kagchi/fasting";
+import fastify from "fastify";
 
-const fastify = Fastify({
+const fastifyApp = fastify({
     logger: true
-})
+});
 
-// initiate fasting plugin
-fastify.register(fasting)
+await fastifyApp.register(fasting);
 
-fastify.listen({ port: 3000 })
+await fastifyApp.listen({ port: 3_000 }).then(() => console.log("Server is running on port 3000")).catch(() => console.log("Server failed to start"));
 ```
 
 ## Create routes folder
 src/routes/index.ts
 ```ts
-import { Route, RouteOptions, } from "@kagchi/fasting"
-import { FastifyReply, FastifyRequest } from "fastify"
-import { PieceContext } from "@sapphire/pieces"
+import type { RouteOptions } from "@kagchi/fasting";
+import { Route } from "@kagchi/fasting";
+import type { LoaderPieceContext } from "@sapphire/pieces";
+import type { FastifyReply, FastifyRequest } from "fastify";
 
 export class Root extends Route {
-    public constructor(context: PieceContext, options: RouteOptions) {
+    public constructor(context: LoaderPieceContext, options: RouteOptions) {
         super(context, {
             ...options,
             method: "GET",
             path: "/"
-        })
+        });
     }
 
-    public run(request: FastifyRequest, response: FastifyReply) {
-        return response.send("Hello, world!")
+    public run(request: FastifyRequest, response: FastifyReply): FastifyReply {
+        return response.send("Hello, world!");
     }
 }
+
 ```

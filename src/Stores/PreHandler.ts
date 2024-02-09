@@ -1,5 +1,5 @@
 /* eslint-disable class-methods-use-this */
-import { Piece, PieceContext, PieceOptions } from "@sapphire/pieces";
+import { Piece, LoaderPieceContext, PieceOptions } from "@sapphire/pieces";
 import { PrehandlerContainerResult } from "../Lib/Prehandlers/IPrehandlerContainer.js";
 import { FastifyRequest, FastifyReply } from "fastify";
 import { Route } from "./Route.js";
@@ -10,7 +10,7 @@ import { Result } from "@sapphire/result";
 export abstract class PreHandler extends Piece {
     public readonly position: number | null;
 
-    public constructor(context: PieceContext, options: PrehandlerOptions) {
+    public constructor(context: LoaderPieceContext, options: PrehandlerOptions) {
         super(context, options);
         this.position = options.position ?? null;
     }

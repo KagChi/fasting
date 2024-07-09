@@ -1,7 +1,7 @@
 import { FastifyInstance, FastifyPluginOptions } from "fastify";
 import { PreHandlerStore } from "./Stores/PreHandlerStore.js";
 import { RouteStore } from "./Stores/RouteStore.js";
-import { StoreRegistry, Store, Piece, container } from "@sapphire/pieces";
+import { StoreRegistry, container } from "@sapphire/pieces";
 import middie from "@fastify/middie";
 import fp from "fastify-plugin";
 

@@ -38,6 +38,6 @@ export class PrehandlerContainerSingle implements IPrehandlerContainer {
         if (prehandler) {
             return prehandler.run(request, reply, route, { ...context, ...this.context });
         }
-        return err(new ApiError(`The prehandler "${this.name}" is not available.`, 500));
+        return err(new ApiError(`The prehandler "${this.name}" is not available.`, { statusCode: 500, type: "UnhandledPrehandler" }));
     }
 }

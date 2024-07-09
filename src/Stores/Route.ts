@@ -28,6 +28,7 @@ export abstract class Route extends Piece<RouteOptions> {
                     if (error instanceof ApiError) {
                         return res
                             .code(error.statusCode ?? 500)
+                            .header(this.options.headerErrorType ?? "x-error-type", error.type)
                             .send({
                                 error: STATUS_CODES[error.statusCode ?? 500] ?? "Unknown Error",
                                 statusCode: error.statusCode,
@@ -48,6 +49,7 @@ export abstract class Route extends Piece<RouteOptions> {
                     if (error instanceof ApiError) {
                         return rep
                             .code(error.statusCode ?? 500)
+                            .header(this.options.headerErrorType ?? "x-error-type", error.type)
                             .send({
                                 error: STATUS_CODES[error.statusCode ?? 500] ?? "Unknown Error",
                                 statusCode: error.statusCode,
@@ -65,6 +67,7 @@ export abstract class Route extends Piece<RouteOptions> {
                     if (error instanceof ApiError) {
                         return rep
                             .code(error.statusCode ?? 500)
+                            .header(this.options.headerErrorType ?? "x-error-type", error.type)
                             .send({
                                 error: STATUS_CODES[error.statusCode ?? 500] ?? "Unknown Error",
                                 statusCode: error.statusCode,
@@ -90,4 +93,6 @@ export interface RouteOptions extends Piece.Options, Omit<RouteShorthandOptions,
     name?: string;
     schema?: FastifySchema;
     preHandlers?: PrehandlerEntryResolvable[];
+
+    headerErrorType?: string;
 }

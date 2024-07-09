@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@discordjs/collection':
-        specifier: ^1.5.3
-        version: 1.5.3
+        specifier: ^2.1.0
+        version: 2.1.0
       '@fastify/middie':
         specifier: ^8.3.1
         version: 8.3.1
@@ -67,6 +67,10 @@ packages:
   '@discordjs/collection@1.5.3':
     resolution: {integrity: sha512-SVb428OMd3WO1paV3rm6tSjM4wC+Kecaa1EUGX7vc6/fddvw/6lg90z4QtCqm21zvVe92vMMDt9+DkIvjXImQQ==}
     engines: {node: '>=16.11.0'}
+
+  '@discordjs/collection@2.1.0':
+    resolution: {integrity: sha512-mLcTACtXUuVgutoznkh6hS3UFqYirDYAg5Dc1m8xn6OvPjetnUlf/xjtqnnc47OwWdaoCQnHmHh9KofhD6uRqw==}
+    engines: {node: '>=18'}
 
   '@eslint-community/eslint-utils@4.4.0':
     resolution: {integrity: sha512-1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA==}
@@ -1322,6 +1326,8 @@ snapshots:
   '@aashutoshrathi/word-wrap@1.2.6': {}
 
   '@discordjs/collection@1.5.3': {}
+
+  '@discordjs/collection@2.1.0': {}
 
   '@eslint-community/eslint-utils@4.4.0(eslint@8.57.0)':
     dependencies:

@@ -1,7 +1,7 @@
 {
   "name": "@kagchi/fasting",
   "version": "1.1.0",
-  "description": "A Fastify dynamic routing per file, OOP Based",
+  "description": "A Better Fastify auto loads for Routes & Prehandlers",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {

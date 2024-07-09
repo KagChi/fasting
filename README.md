@@ -4,7 +4,7 @@
 
 # @kagchi/fasting
 
-**A Fastify dynamic routing per file, OOP Based**
+**A Better Fastify auto loads for Routes & Prehandlers**
 
 [![GitHub](https://img.shields.io/github/license/kagchi/fasting)](https://github.com/kagchi/fasting/blob/main/LICENSE)
 [![Discord](https://discordapp.com/api/guilds/785715968608567297/embed.png)](https://kagchi.my.id)
@@ -29,7 +29,7 @@ npm i @kagchi/fasting
 yarn add @kagchi/fasting
 ```
 
-# Usecase
+# Example Use
 
 ## Main file
 src/index.ts
@@ -46,7 +46,7 @@ await fastifyApp.register(fasting);
 await fastifyApp.listen({ port: 3_000 }).then(() => console.log("Server is running on port 3000")).catch(() => console.log("Server failed to start"));
 ```
 
-## Create routes folder
+## Create routes folder & Create root route
 src/routes/index.ts
 ```ts
 import type { RouteOptions } from "@kagchi/fasting";

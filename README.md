@@ -36,14 +36,20 @@ src/index.ts
 ```ts
 import { fasting } from "@kagchi/fasting";
 import fastify from "fastify";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const fastifyApp = fastify({
     logger: true
 });
 
-await fastifyApp.register(fasting);
+await fastifyApp.register(fasting, {
+    basePath: resolve(dirname(fileURLToPath(import.meta.url)))
+});
 
-await fastifyApp.listen({ port: 3_000 }).then(() => console.log("Server is running on port 3000")).catch(() => console.log("Server failed to start"));
+await fastifyApp.listen({ port: 3_000 })
+    .then(() => console.log("Server is running on port 3000"))
+    .catch(() => console.log("Server failed to start"));
 ```
 
 ## Create routes folder & Create root route

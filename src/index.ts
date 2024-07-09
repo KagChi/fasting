@@ -18,6 +18,8 @@ export * from "./Stores/PreHandler.js";
 export * from "./Stores/PreHandlerStore.js";
 export * from "./Stores/Route.js";
 export * from "./Stores/RouteStore.js";
+export * from "./Stores/Plugin.js";
+export * from "./Stores/PluginStore.js";
 
 export * from "./Errors/ApiError.js";
 

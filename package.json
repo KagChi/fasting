@@ -30,13 +30,13 @@
   "license": "GPL-3.0",
   "devDependencies": {
     "@hazmi35/eslint-config": "^11.0.0",
-    "@swc/cli": "^0.1.65",
-    "@swc/core": "^1.4.0",
-    "@types/node": "^18.19.14",
+    "@swc/cli": "^0.4.0",
+    "@swc/core": "^1.6.13",
+    "@types/node": "^18.19.39",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "eslint": "^8.56.0",
-    "rimraf": "^5.0.5",
+    "rimraf": "^5.0.9",
     "typescript": "^5.3.3"
   },
   "eslintConfig": {
@@ -56,11 +56,11 @@
   },
   "dependencies": {
     "@discordjs/collection": "^1.5.3",
-    "@fastify/middie": "^8.3.0",
+    "@fastify/middie": "^8.3.1",
     "@sapphire/pieces": "^4.2.2",
     "@sapphire/result": "^2.6.6",
     "@sapphire/utilities": "^3.15.3",
-    "fastify": "^4.26.0",
+    "fastify": "^4.28.1",
     "fastify-plugin": "^4.5.1"
   }
 }

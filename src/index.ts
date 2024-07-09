@@ -4,6 +4,7 @@ import { RouteStore } from "./Stores/RouteStore.js";
 import { StoreRegistry, container } from "@sapphire/pieces";
 import middie from "@fastify/middie";
 import fp from "fastify-plugin";
+import { PluginStore } from "./Stores/PluginStore.js";
 
 export * from "./Lib/Prehandlers/PrehandlerContainerArray.js";
 export * from "./Lib/Prehandlers/PrehandlerContainerSingle.js";
@@ -49,6 +50,7 @@ export { fasting };
 declare module "@sapphire/pieces" {
     interface StoreRegistryEntries {
         routes: RouteStore;
+        plugins: PluginStore;
         "pre-handlers": PreHandlerStore;
     }
 

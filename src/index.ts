@@ -40,6 +40,7 @@ const fasting = async (fastify: FastifyInstance, options: FastingOptions): Promi
 
     fastify.decorate("fasting-stores", stores);
 
+    await stores.get("plugins").run(fastify);
     await fastify.register(middie);
     await stores.load();
 };

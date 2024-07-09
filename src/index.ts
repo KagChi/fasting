@@ -1,9 +1,10 @@
 import { FastifyInstance, FastifyPluginOptions } from "fastify";
-import { PreHandlerStore } from "./Stores/PreHandlerStore.js";
-import { RouteStore } from "./Stores/RouteStore.js";
 import { StoreRegistry, container } from "@sapphire/pieces";
 import middie from "@fastify/middie";
 import fp from "fastify-plugin";
+
+import { PreHandlerStore } from "./Stores/PreHandlerStore.js";
+import { RouteStore } from "./Stores/RouteStore.js";
 import { PluginStore } from "./Stores/PluginStore.js";
 
 export * from "./Lib/Prehandlers/PrehandlerContainerArray.js";
@@ -31,6 +32,7 @@ const fasting = async (fastify: FastifyInstance, options: FastingOptions): Promi
     const stores = container.stores;
     stores.register(new RouteStore());
     stores.register(new PreHandlerStore());
+    stores.register(new PluginStore());
 
     container.server = fastify;
 

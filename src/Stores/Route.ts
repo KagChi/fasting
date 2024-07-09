@@ -4,9 +4,11 @@ import { Awaitable } from "@sapphire/utilities";
 import { Result } from "@sapphire/result";
 import { ApiError } from "../Errors/ApiError.js";
 import { PrehandlerContainerArray, PrehandlerEntryResolvable } from "../Lib/Prehandlers/PrehandlerContainerArray.js";
+import { STATUS_CODES } from "node:http";
 
 export abstract class Route extends Piece<RouteOptions> {
     public prehandlers: PrehandlerContainerArray;
+
     public constructor(context: LoaderPieceContext, options: RouteOptions) {
         super(context, options);
         if (!this.options.name) this.options.name = `${this.options.method} ${this.options.path}`;
@@ -19,24 +21,58 @@ export abstract class Route extends Piece<RouteOptions> {
             method: this.options.method,
             url: this.options.path,
             handler: async (req, res) => {
-                const result = await Result.fromAsync<unknown, ApiError>(() => this.run(req, res));
+                const result = await Result.fromAsync<unknown, Error>(() => this.run(req, res));
                 if (result.isErr()) {
                     const error = result.unwrapErr();
-                    return res.code(error.statusCode ?? 500).send({ statusCode: error.statusCode, message: error.message, cause: error.cause });
-                }
-                if (result.isOkAnd(value => typeof value === "object")) return result.unwrap();
-            },
-            preHandler: async (req, res) => {
-                const global = await this.container.stores.get("pre-handlers").run(req, res, this);
-                if (global.isErr()) {
-                    const error = global.unwrapErr();
-                    return res.code(error.statusCode ?? 500).send({ statusCode: error.statusCode, message: error.message, cause: error.cause });
+
+                    if (error instanceof ApiError) {
+                        return res
+                            .code(error.statusCode ?? 500)
+                            .send({
+                                error: STATUS_CODES[error.statusCode ?? 500] ?? "Unknown Error",
+                                statusCode: error.statusCode,
+                                message: error.message,
+                                cause: error.cause
+                            });
+                    }
+
+                    return res.send(error);
                 }
 
-                const result = await this.prehandlers.run(req, res, this);
+                if (result.isOkAnd(value => typeof value === "object") && !res.sent) return result.unwrap();
+            },
+            onRequest: async (req, rep) => {
+                const global = await this.container.stores.get("pre-handlers").run(req, rep, this);
+                if (global.isErr()) {
+                    const error = global.unwrapErr();
+                    if (error instanceof ApiError) {
+                        return rep
+                            .code(error.statusCode ?? 500)
+                            .send({
+                                error: STATUS_CODES[error.statusCode ?? 500] ?? "Unknown Error",
+                                statusCode: error.statusCode,
+                                message: error.message,
+                                cause: error.cause
+                            });
+                    }
+
+                    return rep.send(error);
+                }
+
+                const result = await this.prehandlers.run(req, rep, this);
                 if (result.isErr()) {
                     const error = result.unwrapErr();
-                    return res.code(error.statusCode ?? 500).send({ statusCode: error.statusCode, message: error.message, cause: error.cause });
+                    if (error instanceof ApiError) {
+                        return rep
+                            .code(error.statusCode ?? 500)
+                            .send({
+                                error: STATUS_CODES[error.statusCode ?? 500] ?? "Unknown Error",
+                                statusCode: error.statusCode,
+                                message: error.message,
+                                cause: error.cause
+                            });
+                    }
+                    return rep.send(error);
                 }
             },
             schema: this.options.schema
@@ -48,7 +84,7 @@ export abstract class Route extends Piece<RouteOptions> {
     public abstract run(request: FastifyRequest, reply: FastifyReply): Awaitable<unknown>;
 }
 
-export interface RouteOptions extends Piece.Options, RouteShorthandOptions {
+export interface RouteOptions extends Piece.Options, Omit<RouteShorthandOptions, "onRequest"> {
     path: string;
     method: HTTPMethods;
     name?: string;

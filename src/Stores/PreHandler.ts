@@ -15,8 +15,8 @@ export abstract class PreHandler extends Piece {
         this.position = options.position ?? null;
     }
 
-    public error(options: { message: string; statusCode: number }): Awaitable<Result<unknown, ApiError>> {
-        return Result.err(new ApiError(options.message, options.statusCode));
+    public error(options: { message: string; statusCode: number; type: string }): Awaitable<Result<unknown, ApiError>> {
+        return Result.err(new ApiError(options.message, { statusCode: options.statusCode, type: options.type }));
     }
 
     public ok(): Awaitable<Result<unknown, ApiError>> {

@@ -1,8 +1,18 @@
+export interface ApiErrorOptions {
+    statusCode?: number;
+    type: string;
+}
+
 export class ApiError extends Error {
-    public constructor(message: string, public statusCode?: number) {
+    public statusCode?: number;
+    public type: string;
+
+    public constructor(message: string, options?: ApiErrorOptions) {
         super(message);
-        this.cause = this.constructor;
         this.message = message;
         this.name = "ApiError";
+
+        this.statusCode = options?.statusCode;
+        this.type = options?.type ?? "UnknownError";
     }
 }

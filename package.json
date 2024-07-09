@@ -1,6 +1,6 @@
 {
   "name": "@kagchi/fasting",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A Better Fastify auto loads for Routes & Prehandlers",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

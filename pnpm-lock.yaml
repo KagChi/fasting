@@ -15,14 +15,14 @@ importers:
         specifier: ^8.3.1
         version: 8.3.1
       '@sapphire/pieces':
-        specifier: ^4.2.2
-        version: 4.2.2
+        specifier: ^4.3.1
+        version: 4.3.1
       '@sapphire/result':
         specifier: ^2.6.6
         version: 2.6.6
       '@sapphire/utilities':
-        specifier: ^3.15.3
-        version: 3.15.3
+        specifier: ^3.16.2
+        version: 3.16.2
       fastify:
         specifier: ^4.28.1
         version: 4.28.1
@@ -154,16 +154,16 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
-  '@sapphire/pieces@4.2.2':
-    resolution: {integrity: sha512-DvAC+zTgm5o41D6iX+jBjMp+rRmoHPKNYnav6v6vQLTxBJb+iFMmup9ZREiuXdrh1ejrmVRZojnnI59xQgezwQ==}
+  '@sapphire/pieces@4.3.1':
+    resolution: {integrity: sha512-t42o6i8gPQ3QISIsMl463hj057yfyHsaSrs4FssdiGLmnvL9cuLGLTsjGEPn904wHUhPzS8W5aAPr788RK2/jQ==}
     engines: {node: '>=v14.0.0', npm: '>=7.0.0'}
 
   '@sapphire/result@2.6.6':
     resolution: {integrity: sha512-QCjj7X/QlY0QUCeAaZQmnrsMH/b2BMQYee3F1Y5iF17JagUQqO3KZlG7vfXWQU3SRAJX5OgZZynBjixUH+nNGg==}
     engines: {node: '>=v14.0.0', npm: '>=7.0.0'}
 
-  '@sapphire/utilities@3.15.3':
-    resolution: {integrity: sha512-K5dFGOB5XvblXFN+Av+Tch/dVBAifmxtZ9/2mFo8VqzbiaFJIRUuoPAoNsp8pWYaU423yV8bfD8WsCSNd9w1YQ==}
+  '@sapphire/utilities@3.16.2':
+    resolution: {integrity: sha512-0gRyXPH0hbmfZXwgvCH1z9H/kQwOlLeui86zKafZENpdjmuZznSkDFHRSUksr8Y5W/BxkqnR2WbNEfululh20Q==}
     engines: {node: '>=v14.0.0'}
 
   '@sindresorhus/is@4.6.0':
@@ -1262,8 +1262,8 @@ packages:
     peerDependencies:
       typescript: '>=4.2.0'
 
-  tslib@2.6.2:
-    resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
+  tslib@2.6.3:
+    resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
 
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
@@ -1425,15 +1425,15 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@sapphire/pieces@4.2.2':
+  '@sapphire/pieces@4.3.1':
     dependencies:
       '@discordjs/collection': 1.5.3
-      '@sapphire/utilities': 3.15.3
-      tslib: 2.6.2
+      '@sapphire/utilities': 3.16.2
+      tslib: 2.6.3
 
   '@sapphire/result@2.6.6': {}
 
-  '@sapphire/utilities@3.15.3': {}
+  '@sapphire/utilities@3.16.2': {}
 
   '@sindresorhus/is@4.6.0': {}
 
@@ -2534,7 +2534,7 @@ snapshots:
     dependencies:
       typescript: 5.5.3
 
-  tslib@2.6.2: {}
+  tslib@2.6.3: {}
 
   type-check@0.4.0:
     dependencies:

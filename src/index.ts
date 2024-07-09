@@ -21,8 +21,7 @@ export * from "./Stores/RouteStore.js";
 export * from "./Errors/ApiError.js";
 
 export interface FastingOptions extends FastifyPluginOptions {
-    basePath: string;
-    paths?: string[];
+    paths: string[];
 }
 
 const fasting = async (fastify: FastifyInstance, options: FastingOptions): Promise<void> => {
@@ -32,14 +31,12 @@ const fasting = async (fastify: FastifyInstance, options: FastingOptions): Promi
 
     container.server = fastify;
 
-    stores.registerPath(options.basePath);
-
-    for (const path of options.paths ?? []) stores.registerPath(path);
+    for (const path of options.paths) stores.registerPath(path);
 
     fastify.decorate("fasting-stores", stores);
 
     await fastify.register(middie);
-    await Promise.all([...stores.values()].map((store: Store<Piece>) => store.loadAll()));
+    await stores.load();
 };
 
 export default fp(fasting, {

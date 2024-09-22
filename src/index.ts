@@ -28,7 +28,7 @@ export interface FastingOptions extends FastifyPluginOptions {
     paths: string[];
 }
 
-const fasting = async (fastify: FastifyInstance, options: FastingOptions): Promise<void> => {
+const fasting = (fastify: FastifyInstance, options: FastingOptions): void => {
     const stores = container.stores;
     stores.register(new RouteStore());
     stores.register(new PreHandlerStore());

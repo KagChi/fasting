@@ -72,5 +72,6 @@
     "@sapphire/utilities": "^3.17.0",
     "fastify": "^4.28.1",
     "fastify-plugin": "^4.5.1"
-  }
+  },
+  "packageManager": "pnpm@9.11.0"
 }

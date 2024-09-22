@@ -12,8 +12,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       '@fastify/middie':
-        specifier: ^8.3.3
-        version: 8.3.3
+        specifier: ^9.0.2
+        version: 9.0.2
       '@sapphire/pieces':
         specifier: ^4.3.1
         version: 4.3.1
@@ -93,9 +93,6 @@ packages:
   '@fastify/ajv-compiler@4.0.1':
     resolution: {integrity: sha512-DxrBdgsjNLP0YM6W5Hd6/Fmj43S8zMKiFJYgi+Ri3htTGAowPVG/tG1wpnWLMjufEnehRivUCKZ1pLDIoZdTuw==}
 
-  '@fastify/error@3.4.1':
-    resolution: {integrity: sha512-wWSvph+29GR783IhmvdwWnN4bUxTD01Vm5Xad4i7i1VuAOItLvbPAb69sb0IQ2N57yprvhNIwAP5B6xfKTmjmQ==}
-
   '@fastify/error@4.0.0':
     resolution: {integrity: sha512-OO/SA8As24JtT1usTUTKgGH7uLvhfwZPwlptRi2Dp5P4KKmJI3gvsZ8MIHnNwDs4sLf/aai5LzTyl66xr7qMxA==}
 
@@ -105,8 +102,8 @@ packages:
   '@fastify/merge-json-schemas@0.1.1':
     resolution: {integrity: sha512-fERDVz7topgNjtXsJTTW1JKLy0rhuLRcquYqNR9rF7OcVpCa2OVW49ZPDIhaRRCaUuvVxI+N416xUoF76HNSXA==}
 
-  '@fastify/middie@8.3.3':
-    resolution: {integrity: sha512-+WHavMQr9CNTZoy2cjoDxoWp76kZ3JKjAtZj5sXNlxX5XBzHig0TeCPfPc+1+NQmliXtndT3PFwAjrQHE/6wnQ==}
+  '@fastify/middie@9.0.2':
+    resolution: {integrity: sha512-MHvAhUBxrefkpx4A8HtjOjAdlaCtY8j19PC6ORfm7KPMb/dklDeqBqR4xPRTtcBRPZUYq2jAJJWQCB4eO+dtKw==}
 
   '@hazmi35/eslint-config@11.0.0':
     resolution: {integrity: sha512-haZj5Y227wWPupoPZmo28LupYeCfGhT4bmcw0a4xV3T1BpxjlgkAgMBCj5r//GNt/SeGV0O7nWvJfWCM4Ffuxw==}
@@ -636,9 +633,6 @@ packages:
   fast-uri@3.0.1:
     resolution: {integrity: sha512-MWipKbbYiYI0UC7cl8m/i/IWTqfC8YXsqjzybjddLsFjStroQzsHXkc73JutMvBiXmOvapk+axIl79ig5t55Bw==}
 
-  fastify-plugin@4.5.1:
-    resolution: {integrity: sha512-stRHYGeuqpEZTL1Ef0Ovr2ltazUT9g844X5z/zEBFLG8RYlpDiOCIG+ATvYEp+/zmc7sN29mcIMp8gvYplYPIQ==}
-
   fastify-plugin@5.0.1:
     resolution: {integrity: sha512-HCxs+YnRaWzCl+cWRYFnHmeRFyR5GVnJTAaCJQiYzQSDwK9MgJdyAsuL3nh0EWRCYMgQ5MeziymvmAhUHYHDUQ==}
 
@@ -1006,8 +1000,9 @@ packages:
     resolution: {integrity: sha512-ypGJsmGtdXUOeM5u93TyeIEfEhM6s+ljAhrk5vAvSx8uyY/02OvrZnA0YNGUrPXfpJMgI1ODd3nwz8Npx4O4cg==}
     engines: {node: 20 || >=22}
 
-  path-to-regexp@6.3.0:
-    resolution: {integrity: sha512-Yhpw4T9C6hPpgPeA28us07OJeqZ5EzQTkbfwuhsUg0c237RomFoETJgmp2sa3F/41gfLE6G5cqcYwznmeEeOlQ==}
+  path-to-regexp@8.1.0:
+    resolution: {integrity: sha512-Bqn3vc8CMHty6zuD+tG23s6v2kwxslHEhTj4eYaVKGIEB+YX/2wd0/rgXLFD9G9id9KCtbVy/3ZgmvZjpa0UdQ==}
+    engines: {node: '>=16'}
 
   path-type@4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
@@ -1368,8 +1363,6 @@ snapshots:
       ajv-formats: 3.0.1(ajv@8.12.0)
       fast-uri: 3.0.1
 
-  '@fastify/error@3.4.1': {}
-
   '@fastify/error@4.0.0': {}
 
   '@fastify/fast-json-stringify-compiler@5.0.1':
@@ -1380,11 +1373,11 @@ snapshots:
     dependencies:
       fast-deep-equal: 3.1.3
 
-  '@fastify/middie@8.3.3':
+  '@fastify/middie@9.0.2':
     dependencies:
-      '@fastify/error': 3.4.1
-      fastify-plugin: 4.5.1
-      path-to-regexp: 6.3.0
+      '@fastify/error': 4.0.0
+      fastify-plugin: 5.0.1
+      path-to-regexp: 8.1.0
       reusify: 1.0.4
 
   '@hazmi35/eslint-config@11.0.0(@eslint/js@8.57.1)(@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.6.2))(eslint@8.57.1)(typescript@5.6.2))(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.6.2))(eslint@8.57.1)(typescript@5.6.2)':
@@ -1958,8 +1951,6 @@ snapshots:
 
   fast-uri@3.0.1: {}
 
-  fastify-plugin@4.5.1: {}
-
   fastify-plugin@5.0.1: {}
 
   fastify@5.0.0:
@@ -2319,7 +2310,7 @@ snapshots:
       lru-cache: 11.0.0
       minipass: 7.1.2
 
-  path-to-regexp@6.3.0: {}
+  path-to-regexp@8.1.0: {}
 
   path-type@4.0.0: {}
 

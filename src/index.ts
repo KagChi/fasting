@@ -40,12 +40,12 @@ const fasting = async (fastify: FastifyInstance, options: FastingOptions): Promi
 
     fastify.decorate("fasting-stores", stores);
 
-    await fastify.register(middie);
-    await stores.load();
+    void fastify.register(middie);
+    void stores.load();
 };
 
 export default fp(fasting, {
-    fastify: "4.x",
+    fastify: "5.x",
     name: "@kagchi/fasting"
 });
 

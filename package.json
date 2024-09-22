@@ -41,8 +41,8 @@
   "devDependencies": {
     "@hazmi35/eslint-config": "^11.0.0",
     "@swc/cli": "^0.4.0",
-    "@swc/core": "^1.7.2",
-    "@types/node": "^20.14.12",
+    "@swc/core": "^1.7.26",
+    "@types/node": "^20.16.5",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "eslint": "^8.57.1",
@@ -65,8 +65,8 @@
     "rules": {}
   },
   "dependencies": {
-    "@discordjs/collection": "^2.1.0",
-    "@fastify/middie": "^8.3.1",
+    "@discordjs/collection": "^2.1.1",
+    "@fastify/middie": "^8.3.3",
     "@sapphire/pieces": "^4.3.1",
     "@sapphire/result": "^2.6.6",
     "@sapphire/utilities": "^3.17.0",

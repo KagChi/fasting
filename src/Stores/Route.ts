@@ -5,6 +5,7 @@ import { Result } from "@sapphire/result";
 import { ApiError } from "../Errors/ApiError.js";
 import { PrehandlerContainerArray, PrehandlerEntryResolvable } from "../Lib/Prehandlers/PrehandlerContainerArray.js";
 import { STATUS_CODES } from "node:http";
+import { RouteStore } from "./RouteStore.js";
 
 export abstract class Route extends Piece<RouteOptions> {
     public prehandlers: PrehandlerContainerArray;
@@ -26,6 +27,11 @@ export abstract class Route extends Piece<RouteOptions> {
                     const error = result.unwrapErr();
 
                     if (error instanceof ApiError) {
+                        const store = this.store as RouteStore;
+                        if (store.options.errorResponseBuilder !== undefined) {
+                            return store.options.errorResponseBuilder;
+                        }
+
                         return res
                             .code(error.statusCode ?? 500)
                             .header(this.options.headerErrorType ?? "x-error-type", error.type)
@@ -47,6 +53,11 @@ export abstract class Route extends Piece<RouteOptions> {
                 if (global.isErr()) {
                     const error = global.unwrapErr();
                     if (error instanceof ApiError) {
+                        const store = this.store as RouteStore;
+                        if (store.options.errorResponseBuilder !== undefined) {
+                            return store.options.errorResponseBuilder;
+                        }
+
                         return rep
                             .code(error.statusCode ?? 500)
                             .header(this.options.headerErrorType ?? "x-error-type", error.type)
@@ -65,6 +76,11 @@ export abstract class Route extends Piece<RouteOptions> {
                 if (result.isErr()) {
                     const error = result.unwrapErr();
                     if (error instanceof ApiError) {
+                        const store = this.store as RouteStore;
+                        if (store.options.errorResponseBuilder !== undefined) {
+                            return store.options.errorResponseBuilder;
+                        }
+
                         return rep
                             .code(error.statusCode ?? 500)
                             .header(this.options.headerErrorType ?? "x-error-type", error.type)

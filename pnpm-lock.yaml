@@ -40,8 +40,8 @@ importers:
         specifier: ^1.7.40
         version: 1.7.40
       '@types/node':
-        specifier: ^20.17.3
-        version: 20.17.3
+        specifier: ^22.10.2
+        version: 22.10.2
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.21.0
         version: 6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.7.2))(eslint@8.57.1)(typescript@5.7.2)
@@ -279,8 +279,8 @@ packages:
   '@types/keyv@3.1.4':
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
 
-  '@types/node@20.17.3':
-    resolution: {integrity: sha512-tSQrmKKatLDGnG92h40GD7FzUt0MjahaHwOME4VAFeeA/Xopayq5qLyQRy7Jg/pjgKIFBXuKcGhJo+UdYG55jQ==}
+  '@types/node@22.10.2':
+    resolution: {integrity: sha512-Xxr6BBRCAOQixvonOye19wnzyDiUtTeqldOOmj3CkeblonbccA12PFwlufvRdrpjXxqnmUaeiU5EOA+7s5diUQ==}
 
   '@types/responselike@1.0.3':
     resolution: {integrity: sha512-H/+L+UkTV33uf49PH5pCAUBVPNj2nDBXTN+qS1dOwyyg24l3CcicicCA7ca+HMvJBZcFgl5r8e+RR6elsb4Lyw==}
@@ -1288,8 +1288,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  undici-types@6.19.8:
-    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
+  undici-types@6.20.0:
+    resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
 
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
@@ -1524,7 +1524,7 @@ snapshots:
     dependencies:
       '@types/http-cache-semantics': 4.0.4
       '@types/keyv': 3.1.4
-      '@types/node': 20.17.3
+      '@types/node': 22.10.2
       '@types/responselike': 1.0.3
 
   '@types/http-cache-semantics@4.0.4': {}
@@ -1533,15 +1533,15 @@ snapshots:
 
   '@types/keyv@3.1.4':
     dependencies:
-      '@types/node': 20.17.3
+      '@types/node': 22.10.2
 
-  '@types/node@20.17.3':
+  '@types/node@22.10.2':
     dependencies:
-      undici-types: 6.19.8
+      undici-types: 6.20.0
 
   '@types/responselike@1.0.3':
     dependencies:
-      '@types/node': 20.17.3
+      '@types/node': 22.10.2
 
   '@types/semver@7.5.6': {}
 
@@ -2555,7 +2555,7 @@ snapshots:
 
   typescript@5.7.2: {}
 
-  undici-types@6.19.8: {}
+  undici-types@6.20.0: {}
 
   uri-js@4.4.1:
     dependencies:

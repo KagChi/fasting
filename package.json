@@ -42,7 +42,7 @@
     "@hazmi35/eslint-config": "^11.0.0",
     "@swc/cli": "^0.7.3",
     "@swc/core": "^1.11.21",
-    "@types/node": "^20.17.30",
+    "@types/node": "^22.14.1",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "eslint": "^8.57.1",

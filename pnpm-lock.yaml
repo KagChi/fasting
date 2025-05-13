@@ -15,8 +15,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       '@sapphire/pieces':
-        specifier: ^4.3.2
-        version: 4.3.2
+        specifier: ^4.4.0
+        version: 4.4.0
       '@sapphire/result':
         specifier: ^2.7.2
         version: 2.7.2
@@ -63,10 +63,6 @@ packages:
   '@aashutoshrathi/word-wrap@1.2.6':
     resolution: {integrity: sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==}
     engines: {node: '>=0.10.0'}
-
-  '@discordjs/collection@1.5.3':
-    resolution: {integrity: sha512-SVb428OMd3WO1paV3rm6tSjM4wC+Kecaa1EUGX7vc6/fddvw/6lg90z4QtCqm21zvVe92vMMDt9+DkIvjXImQQ==}
-    engines: {node: '>=16.11.0'}
 
   '@discordjs/collection@2.1.1':
     resolution: {integrity: sha512-LiSusze9Tc7qF03sLCujF5iZp7K+vRNEDBZ86FT9aQAv3vxMLihUvKvpsCWiQ2DJq1tVckopKm1rxomgNUc9hg==}
@@ -160,8 +156,8 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
-  '@sapphire/pieces@4.3.2':
-    resolution: {integrity: sha512-0GuLwBoiyINHRDYEcd+RR/enYUQCiGkbCYOVi9Zwa1G4c2S6lc2MqdUd5ies7LkY5HgqDg/3ST7W4FSzxnvbHA==}
+  '@sapphire/pieces@4.4.0':
+    resolution: {integrity: sha512-0VXa3j4okHTrg8zsaR/QPr5nYYMdNAdmBAcihLVLsKp8YU6vnljhw48o3iQ9i+Y/KsV5iXcOIxLVkXwtUaGdvg==}
     engines: {node: '>=v14.0.0', npm: '>=7.0.0'}
 
   '@sapphire/result@2.7.2':
@@ -1342,8 +1338,6 @@ snapshots:
 
   '@aashutoshrathi/word-wrap@1.2.6': {}
 
-  '@discordjs/collection@1.5.3': {}
-
   '@discordjs/collection@2.1.1': {}
 
   '@eslint-community/eslint-utils@4.4.0(eslint@8.57.1)':
@@ -1444,9 +1438,9 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@sapphire/pieces@4.3.2':
+  '@sapphire/pieces@4.4.0':
     dependencies:
-      '@discordjs/collection': 1.5.3
+      '@discordjs/collection': 2.1.1
       '@sapphire/utilities': 3.18.2
       tslib: 2.8.1
 

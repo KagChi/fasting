@@ -42,7 +42,7 @@
     "@hazmi35/eslint-config": "^11.0.0",
     "@swc/cli": "^0.7.7",
     "@swc/core": "^1.11.22",
-    "@types/node": "^22.15.17",
+    "@types/node": "^22.15.18",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "eslint": "^8.57.1",
@@ -70,8 +70,8 @@
     "@sapphire/pieces": "^4.4.0",
     "@sapphire/result": "^2.7.2",
     "@sapphire/utilities": "^3.18.2",
-    "fastify": "^5.3.2",
+    "fastify": "^5.3.3",
     "fastify-plugin": "^5.0.1"
   },
-  "packageManager": "pnpm@10.10.0"
+  "packageManager": "pnpm@10.11.0"
 }

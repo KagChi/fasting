@@ -41,7 +41,7 @@
   "devDependencies": {
     "@hazmi35/eslint-config": "^11.0.0",
     "@swc/cli": "^0.7.7",
-    "@swc/core": "^1.12.0",
+    "@swc/core": "^1.12.1",
     "@types/node": "^22.15.31",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
@@ -70,7 +70,7 @@
     "@sapphire/pieces": "^4.4.1",
     "@sapphire/result": "^2.7.2",
     "@sapphire/utilities": "^3.18.2",
-    "fastify": "^5.3.3",
+    "fastify": "^5.4.0",
     "fastify-plugin": "^5.0.1"
   },
   "packageManager": "pnpm@10.12.1"

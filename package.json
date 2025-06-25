@@ -41,8 +41,8 @@
   "devDependencies": {
     "@hazmi35/eslint-config": "^11.0.0",
     "@swc/cli": "^0.7.7",
-    "@swc/core": "^1.12.5",
-    "@types/node": "^22.15.32",
+    "@swc/core": "^1.12.6",
+    "@types/node": "^22.15.33",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "eslint": "^8.57.1",
@@ -73,5 +73,5 @@
     "fastify": "^5.4.0",
     "fastify-plugin": "^5.0.1"
   },
-  "packageManager": "pnpm@10.12.2"
+  "packageManager": "pnpm@10.12.3"
 }
